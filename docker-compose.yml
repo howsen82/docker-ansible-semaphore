@@ -18,13 +18,13 @@ services:
     restart: unless-stopped
     image: mysql:latest
     hostname: mysql
-    volumes:
-      - semaphore-mysql:/var/lib/mysql
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
       MYSQL_DATABASE: semaphore
       MYSQL_USER: semaphore
       MYSQL_PASSWORD: semaphore
+    volumes:
+      - semaphore-mysql:/var/lib/mysql
 
   semaphore:
     image: semaphoreui/semaphore:latest
